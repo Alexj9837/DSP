@@ -1,0 +1,13 @@
+News = News(
+    uuid="2a2e1474-5bcf-4fa3-bb24-f4ce6f6c62a2",
+    title="Tencent Cloud to reportedly offer deepfake creation tool at $145 By Cointelegraph",
+    description="Tencent Cloud to reportedly offer deepfake creation tool at $145",
+    keywords="",
+    snippet="Published Apr 29, 2023 04:32AM ET Updated Apr 29, 2023 06:20AM ET\n\n© Reuters\n\nTSLA +2.57% Add to/Remove from Watchlist\n\nTencent Cloud — the cloud services pr...",
+    url="https://www.investing.com/news/cryptocurrency-news/tencent-cloud-to-reportedly-offer-deepfake-creation-tool-at-145-3068221",
+    image_url="https://i-invdn-com.investing.com/news/Tesla_800x533_L_1615573874.jpg",
+    language="en",
+    published_at="2023-04-29T10:20:08.000000Z",
+    source="investing.com",
+    relevance_score=None
+)
