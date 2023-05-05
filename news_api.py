@@ -34,7 +34,7 @@ if response.status_code == 200:
             language=news_item_data["language"],
             published_at=news_item_data["published_at"],
             source=news_item_data["source"],
-            relevance_score=news_item_data["relevance_score"]
+            relevance_score=np.argmax(prediction(news_item_data["title"]))
         )
         news_article.save()
 
@@ -48,7 +48,8 @@ if response.status_code == 200:
                 type=entity_data["type"],
                 industry=entity_data["industry"],
                 match_score=entity_data["match_score"],
-                sentiment_score = np.argmax(prediction(news_article.title)),
+                sentiment_score= entity_data["sentiment_score"],
+
                 news=news_article
             )
             print(type(news_article.title))
