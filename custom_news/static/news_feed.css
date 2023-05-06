@@ -1,1 +1,93 @@
-.right-bck{background-color: #231833}.registration-right{width: 80%;padding-top: 50px;padding-bottom: 50px}.registration-right h2{color: #ffffff;font-weight: 700;padding-bottom: 20px}.registration .btn{width: 100%}.fa, .fas, .fab{font-family: "Font Awesome 5 Free";font-weight: 900}.far{font-family: "Font Awesome 5 Free";font-weight: 400}.event-list .card{background-color: #30263f;padding: 18px;margin-bottom: 3px}.event-list img{width: 77px;height: 77px}.event-list h4{color: #c0bfc9;font-size: 16px}.event-list .card-title span{padding-left: 5px;padding-right: 20px;font-size: 12px;font-weight: 700}.event-list .card-text{color: #ffffff;font-weight: 700;font-size: 16px}.event-list .card-body{padding: 0 20px;margin: 0 0 10px 0}.event-list .card-title svg{color: #ffffff}
+.right-bck {
+    background-color: #231833;
+}
+
+.registration-right {
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.registration-right h2 {
+    color: #ffffff;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.registration .btn {
+    width: 100%;
+}
+
+.fa, .fas, .fab {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+}
+
+.event-list .card {
+    background-color: #30263f;
+    padding: 18px;
+    margin-bottom: 3px;
+}
+
+.event-list img {
+    width: 77px;
+    height: 77px;
+}
+
+.event-list h4 {
+    color: #c0bfc9;
+    font-size: 16px;
+}
+
+.event-list .card-title span {
+    padding-left: 5px;
+    padding-right: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.event-list .card-text {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.event-list .card-body {
+    padding: 0 20px;
+    margin: 0 0 10px 0;
+}
+
+.event-list .card-title svg {
+    color: #ffffff;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.ad-space-left,
+.ad-space-right {
+    width: 160px;
+    height: 600px;
+    background-color: #1a9920;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+.ad-space-right {
+    margin-left: 20px;
+}
+.main-content {
+    flex-grow: 1;
+    margin: 20px;
+}

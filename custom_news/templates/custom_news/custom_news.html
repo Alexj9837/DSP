@@ -4,9 +4,9 @@
 {% block title %}
   custom news
 {% endblock %}
-{% block content %}
-<body>
 
+
+{% block content %}
 <div class="container">
     <h1 class="mt-4 mb-4">News Feed</h1>
 
@@ -28,19 +28,22 @@
             <h6 class="text-muted">Sentiment Score: {{ news_item.relevance_score }}</h6>
             <p class="text-muted">{{ news_item.description }}</p>
             <button type="button" class="btn btn-primary" onclick="location.href='{{ news_item.url }}'">Read more</button>
-            {% if news_item.symbol not in user.interest %}
-            <form method="post" action="{% url 'add_interest' %}">
+            <form method="post" action="{% url 'remove_interest' %}">
                 {% csrf_token %}
                 <input type="hidden" name="symbol" value="{{ news_item.symbol }}">
-                <button type="submit" class="btn btn-secondary">Add to interests</button>
+                <button type="submit" class="btn btn-danger">Remove from interests</button>
             </form>
-        {% else %}
-            <p>Already in your interests</p>
-        {% endif %}
         </div>
     </div>
     <!--Section: News Item-->
 
+    {% empty %}
+    <div class="alert alert-info" role="alert">
+        No items in your interests.
+    </div>
+    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'news' %}'">Go to general news</button>
+
     {% endfor %}
 </div>
+
 {% endblock %}

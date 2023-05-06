@@ -1,4 +1,6 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
+  
 
 class News(models.Model):
     uuid = models.UUIDField(primary_key=True)
@@ -12,12 +14,8 @@ class News(models.Model):
     published_at = models.DateTimeField()
     source = models.CharField(max_length=255)
     relevance_score = models.FloatField(null=True, blank=True)
-    
-    def __str__(self):
-        return self.title
 
-class Entity(models.Model):
-    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='entities')
+    # Entity fields
     symbol = models.CharField(max_length=10)
     name = models.CharField(max_length=255)
     exchange = models.CharField(max_length=255)
@@ -27,15 +25,12 @@ class Entity(models.Model):
     industry = models.CharField(max_length=255)
     match_score = models.FloatField()
     sentiment_score = models.FloatField()
-    
-    def __str__(self):
-        return self.name
-
-class Highlight(models.Model):
-    entity = models.ForeignKey(Entity, on_delete=models.CASCADE, related_name='highlights')
-    highlight = models.TextField()
-    sentiment = models.FloatField()
-    highlighted_in = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.highlight[:50] + '...'
+        return self.title
+
+
+
+
+class Custom_user(AbstractUser):
+    interest = models.TextField()
