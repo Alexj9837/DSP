@@ -1,46 +1,59 @@
-{% extends "custom_news/template.html" %}
-{% load static %}
-
-{% block title %}
-  custom news
-{% endblock %}
-{% block content %}
+{% extends "custom_news/template.html" %} {% load static %} {% block title %}
+custom news {% endblock %} {% block content %}
 <body>
-
-<div class="container">
-    <h1 class="mt-4 mb-4">News Feed</h1>
+  <div class="container">
+    <h1 class="mt-4 mb-4">Discover</h1>
 
     {% for news_item in news_items %}
     <!--Section: News Item-->
     <div class="row gx-5">
-        <div class="col-md-6 mb-4">
-            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                <img src="{{ news_item.image_url }}" class="img-fluid" />
-                <a href="{{ news_item.url }}">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-            </div>
+      <div class="col-md-6 mb-4">
+        <div
+          class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
+          data-mdb-ripple-color="light"
+        >
+          <img src="{{ news_item.image_url }}" class="img-fluid" />
+          <a href="{{ news_item.url }}">
+            <div
+              class="mask"
+              style="background-color: rgba(251, 251, 251, 0.15)"
+            ></div>
+          </a>
         </div>
+      </div>
 
-        <div class="col-md-6 mb-4">
-            <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">{{ news_item.source }}</span>
-            <h4><strong>{{ news_item.title }}</strong></h4>
-            <h6 class="text-muted">Sentiment Score: {{ news_item.relevance_score }}</h6>
-            <p class="text-muted">{{ news_item.description }}</p>
-            <button type="button" class="btn btn-primary" onclick="location.href='{{ news_item.url }}'">Read more</button>
-            {% if news_item.symbol not in user.interest %}
-            <form method="post" action="{% url 'add_interest' %}">
-                {% csrf_token %}
-                <input type="hidden" name="symbol" value="{{ news_item.symbol }}">
-                <button type="submit" class="btn btn-secondary">Add to interests</button>
-            </form>
-        {% else %}
-            <p>Already in your interests</p>
-        {% endif %}
+      <div class="col-md-6 mb-4">
+        <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3"
+          >{{ news_item.source }}</span
+        >
+        <h4><strong>{{ news_item.title }}</strong></h4>
+        <h6 class="text-muted">
+          Sentiment Score: {{ news_item.relevance_score }}
+        </h6>
+        <p class="text-muted">{{ news_item.description }}</p>
+        <div class="d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn btn-primary m-1"
+            onclick="location.href='{{ news_item.url }}'"
+          >
+            Read more
+          </button>
+          {% if news_item.symbol not in user.interest %}
+          <form method="post" action="{% url 'add_interest' %}">
+            {% csrf_token %}
+            <input type="hidden" name="symbol" value="{{ news_item.symbol }}" />
+            <button type="submit" class="btn btn-secondary m-1">
+              Add to interests
+            </button>
+          </form>
+          {% else %} {% endif %}
         </div>
+      </div>
     </div>
     <!--Section: News Item-->
 
     {% endfor %}
-</div>
-{% endblock %}
+  </div>
+  {% endblock %}
+</body>

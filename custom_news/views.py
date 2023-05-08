@@ -1,7 +1,6 @@
 
 from django.http import JsonResponse
 import requests
-from custom_news.models import News
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required

@@ -74,19 +74,13 @@
 }
 
 .ad-space-left,
-.ad-space-right {
-    width: 160px;
+  .ad-space-right {
+    background-color: green;
+    width: 80%;
     height: 600px;
-    background-color: #1a9920;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ccc;
-    margin-top: 20px;
-}
-.ad-space-right {
-    margin-left: 20px;
-}
+  }
+
+
 .main-content {
     flex-grow: 1;
     margin: 20px;
