@@ -96,3 +96,24 @@ def remove_interest(request):
             user.save()
 
     return HttpResponseRedirect(reverse('custom_news'))
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
+            password = form.cleaned_data.get('password1')
+            role = 'student'
+
+            user = Custom_user.objects.create_user(username=username, email=email, password=password,
+                                            first_name=first_name, last_name=last_name, role=role)
+            user.save()
+            # Log the user in.
+            #login(request, user)
+            return redirect('home')
+    else:
+        form = SignupForm()
+    return render(request, 'custom_news/signup.html', {'form': form})

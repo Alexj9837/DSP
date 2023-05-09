@@ -12,5 +12,5 @@ urlpatterns = [
     path("logout",views.logout_view,name="logout"),
     path('add_interest/', views.add_interest, name='add_interest'),
     path('remove_interest/', views.remove_interest, name='remove_interest'),
-
+    path('signup/', views.signup, name='signup'),
 ]

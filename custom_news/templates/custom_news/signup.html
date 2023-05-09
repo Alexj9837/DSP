@@ -3,13 +3,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'UWEflix/login.css' %}" />
     <title>Login</title>
 </head>
 
@@ -29,8 +28,9 @@
                     </div>
                     <div class="flex-col-c p-t-17 p-b-40 color: black;">
                         <div style="display: inline-block;"> 
-                          <a style="color:black;" href="{% url 'signup' %}" class="txt2">Sign up</a>
+                          <a style="color:black;" href="{% url 'login' %}" class="txt2">Sign In</a>
                           <a style="color:black;" href="{% url 'home' %}" class="txt2">Home</a>
+                          {% comment %} <a style="color:black;" href="javascript:history.back()" class="txt2">Go back</a> {% endcomment %}
                         </div><br>
                       </div>
                 </form>
